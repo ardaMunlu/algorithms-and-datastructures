@@ -68,4 +68,24 @@ console.log(isPowerOfTwo(16));
 //Big-O = O(1)
 //
 //
-//Recursion
+//Recursive Fibonacci Sequence
+  function RecFibonacci(n){
+    if(n < 2 ){
+      return n
+    }
+    return RecFibonacci(n-1) + RecFibonacci(n-2)
+  }
+
+  console.log(RecFibonacci(6))
+  //Big-O = O(2ⁿ)
+  //
+  //
+  //Recursive Factorial of a Number
+    function RecFactorial(n){
+      if(n == 0){
+        return 1
+      }
+      return n * RecFactorial(n-1)
+    }
+
+    console.log(RecFactorial(5))
