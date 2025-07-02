@@ -238,3 +238,66 @@ console.log(isPowerOfTwo(16));
 //
 //Merge Sort
 
+    function mergeSort(arr){
+      if(arr.length<2){
+        return arr;
+      }
+      const mid = Math.floor(arr.length / 2);
+      const leftArr = arr.slice(0, mid);
+      const rightArr = arr.slice(mid);
+
+      return merge(mergeSort(leftArr), mergeSort(rightArr))
+    }
+
+    function merge(leftArr, rightArr){
+      const sortedArr = [];
+      while(leftArr.length && rightArr.length){
+        if(leftArr[0] <= rightArr[0]){
+          sortedArr.push(leftArr.shift())
+        }else{
+          sortedArr.push(rightArr.shift())
+        }
+      }
+      return [...sortedArr, ...leftArr, ...rightArr];
+    }
+
+    const arr3 = [8, 20, -2, 4, -6];
+    console.log(mergeSort(arr3));
+
+//Big-O O(nlogn)
+//
+//
+//
+//Cartesian Product
+
+    function cartesianProduct(arr1, arr2){
+      const result = [];
+
+      for(let i = 0; i < arr1.length; i++){
+        for(let j = 0; j < arr2.length; j++){
+          result.push([arr1[i], arr2[j]]);
+        }
+      }
+      return result;
+    }
+
+    const arr4 = [1,2];
+    const arr5 = [3, 4, 5];
+    console.log(cartesianProduct(arr4, arr5));
+  
+//Big-O = (mn)
+//
+//
+//Climbing Staircase
+
+    function climbingStaircase(n){
+      const noOfWays = [1, 2];
+      for(let i = 2; i <= n; i++){
+        noOfWays[i] = noOfWays[i-1] + noOfWays[i-2];
+      }
+      return noOfWays[n - 1];
+    }
+
+    console.log(climbingStaircase(5));
+
+
