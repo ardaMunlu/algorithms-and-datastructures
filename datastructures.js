@@ -105,6 +105,15 @@ class CircularQueue {
 	}
 }
 
+//LINKED LIST IMPLEMENTATION
+
+class Node {
+	constructor(value) {
+		this.value = value
+		this.next = null
+	}
+}
+
 class LinkedList {
 	constructor() {
 		this.head = null
@@ -173,5 +182,25 @@ class LinkedList {
 			prev.next = node
 			this.size++
 		}
+	}
+
+	removeFrom(index){
+		if(index < 0 || index >= this.size){
+			return null
+		} 
+		let removeNode
+		if(index === 0) {
+			removeNode = this.head
+			this.head = this.head.next
+		} else {
+			let prev = this.head
+			for(let i =0; i < index -1;i++){
+				prev = prev.next
+			}
+			removeNode = prev.next
+			prev.next = removeNode.next
+		}
+		this.size--
+		return removeNode.value
 	}
 }
