@@ -91,8 +91,8 @@ class CircularQueue {
 	}
 
 	print() {
-		is(this.isEmpty()) {
-			console.log("Queueu is empty!")
+		if(this.isEmpty()) {
+			console.log("Queueu is empty!");
 		} else {
 			let i
 			let str = ''
@@ -141,7 +141,7 @@ class LinkedList {
 
 	print() {
 		if(this.isEmpty){
-		console.log("List is empty!"}
+		console.log("List is empty!")
 	}else {
 		let curr = this.head
 		let listValues = ""
@@ -151,9 +151,10 @@ class LinkedList {
 		}
 		console.log(listValues)
 	}
+  }
 
 	append(value) {
-		const node = new Node(value)
+		const node = new Node(value);
 		if(this.isEmpty()){
 			this.head = node
 		}else {
@@ -168,7 +169,7 @@ class LinkedList {
 
 	insert(value, index) {
 		if(index < 0 || index > this.size){
-			return 
+			return
 		}
 		if(index === 0){
 			this.prepend(value)
@@ -203,4 +204,56 @@ class LinkedList {
 		this.size--
 		return removeNode.value
 	}
+}
+
+removeValue(value) {
+  if(this.isEmpty()){
+    return null
+  }
+  if(this.head.value === value) {
+    this.head = this.head.next
+    this.size--
+    return value
+  } else {
+    let prev = this.head
+    while(prev.next && prev.next.value !== value){
+      prev = prev.next
+    }
+    if(prev.next) {
+      removedNode = prev.next
+      prev.next = removedNode.next
+      this.size--
+      return value
+    }
+    return null
+  }
+}
+
+search(value){
+  if(this.isEmpty()){
+    return -1
+  }
+  let i = 0;
+  let curr = this.head
+  while(curr) {
+    if(curr.value === value){
+      return i
+    }
+    curr = curr.next
+    i++
+  }
+  return -1
+}
+
+reverse(){
+  let prev = null
+  let curr = this.head
+  while(curr){
+    let next = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next
+  }
+
+  this.head = prev
 }
