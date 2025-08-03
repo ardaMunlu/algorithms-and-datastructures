@@ -204,7 +204,7 @@ class LinkedList {
 		this.size--
 		return removeNode.value
 	}
-}
+
 
 removeValue(value) {
   if(this.isEmpty()){
@@ -254,6 +254,9 @@ reverse(){
     prev = curr
     curr = next
   }
+  this.head = prev;
+}
 
-  this.head = prev
+
+
 }
