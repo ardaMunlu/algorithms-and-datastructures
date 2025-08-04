@@ -348,5 +348,75 @@ class LinkedList {
 	}
 }
 
+}
+//************************  LINKED LIST STACK	
+module.exports = LinkedList
+
+const LinkedList = requiere('./linked-list')
+
+class LinkedListStack {
+	constructor() {
+		this.list = new LinkedList();
+	}
+
+	push(value) {
+		this.list.prepend(value)
+	}
+
+	pop() {
+		return this.list.removeFromFront()
+	}
+
+	peek() {
+		return this.list.head.value
+	}
+
+	isEmpty() {
+		return this.list.isEmpty()
+	}
+
+	getSize() {
+		return this.getSize()
+	}
+
+	print() {
+		return this.list.print()
+	}
+}
+//************************ LINKED LIST QUEUE
+module.exports = LinkedList
+
+const LinkedList = requiere('./linked-list')
+
+class LinkedListQueue {
+	constructor() {
+		this.list = new LinkedList()
+	}
+
+	enqueue(value){
+		this.list.append(value)
+	}
+
+	dequeue() {
+		this.list.removeFromFront()
+	}
+
+	peek() {
+		return this.list.head.value
+	}
+
+	isEmpty() {
+		return this.list.isEmpty()
+	}
+
+	getSize() {
+		return this.list.getSize()
+	}
+
+	print() {
+		return this.list.print()
+	}
 
 }
+
+//there is also doubly linked list which can be useful for some problems
