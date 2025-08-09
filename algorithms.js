@@ -300,4 +300,5 @@ console.log(isPowerOfTwo(16));
 
     console.log(climbingStaircase(5));
 
+//re-tried to solve the algorithms by my own, watched the Tower of Hanoi video to understand better. (https://www.youtube.com/watch?v=rf6uf3jNjbo)
 
